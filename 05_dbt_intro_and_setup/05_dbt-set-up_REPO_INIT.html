@@ -1,0 +1,760 @@
+<!doctype html>
+<html style='font-size:14px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>05_dbt-set-up_REPO_INIT</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p><img src="./images/dbt_foundation.jpg" referrerpolicy="no-referrer"></p><h2 id='what-is-dbt'><span>What is </span><code>dbt</code><span>?</span></h2><p><code>dbt</code><span> (data build tool) is a tool that allows you to easily build and maintain data pipelines and data warehouses. Recently it gained more and more popularity as it bridges the gap between data engineering and data analytics and subsequently enabling the emergence of analytics engineering as a field.</span></p><p><span>There are two major data integration processes used in data pipelines, called </span><em><span>ETL</span></em><span> and </span><em><span>ELT</span></em><span>. The key difference between both lies in the order of operations. </span></p><ul><li><span>In </span><strong><span>ETL</span></strong><span>, the data is first extracted from the source system, then transformed and finally loaded into the data warehouse. </span></li><li><span>While in </span><strong><span>ELT</span></strong><span>, the data is extracted from the source system, loaded into the data warehouse and transformed afterwards. So in contrast to ETL, upon arrival in the data warehouse, the data is still raw. </span></li></ul><p><code>dbt</code><span> is commonly used in the transformation part of </span><strong><span>ELT</span></strong><span> because it facilitates the creation and maintenance of data transformations in a way that is testable and version controlled. Hence it allows you to transform and analyze your data in a structured and documentable way, while tailoring it to your client&#39;s needs.</span></p><h2 id='why-dbt'><span>Why </span><code>dbt</code><span>?</span></h2><p><span>There are a lot of reasons why you should use </span><code>dbt</code><span> where some of them are mentioned below:</span></p><ul><li><span>It is open source and free to use</span></li><li><span>It is very easy to </span><em><span>use</span></em><span>. You can start using it in a few minutes</span></li><li><span>It is very easy to </span><em><span>test</span></em><span>. You can easily test your models</span></li><li><span>It is very easy to </span><em><span>document</span></em><span>. You can easily document your models</span></li><li><span>It is very easy to </span><em><span>version control</span></em><span>. You can easily version control your models</span></li><li><span>It is very easy to </span><em><span>deploy</span></em><span>. You can easily deploy your models to different environments</span></li><li><span>It is very easy to </span><em><span>automate</span></em><span>. You can easily automate your models</span></li><li><span>It is very easy to </span><em><span>integrate</span></em><span>. You can easily integrate it with other tools</span></li><li><span>It is very easy to </span><em><span>maintain</span></em><span>. You can easily maintain your models</span></li></ul><h2 id='how-does-dbt-work'><span>How does </span><code>dbt</code><span> work?</span></h2><p><code>dbt</code><span> is basically adding a modeling layer to the data warehouse. We get the raw data and run it through dbt models. Each dbt model is a </span><code>.sql</code><span> file which is depending either on the raw data or on other dbt models. The output of the dbt models is then stored in the data warehouse as views or tables.</span></p><p><span>In a standard </span><code>dbt</code><span> project you have the following layers:</span></p><ul><li><span>raw data</span></li><li><span>staging models: where you can clean the data (rename columns, remove duplicates, etc.)</span></li><li><span>prep models: where you can aggregate the data (sum, count, etc.)</span></li><li><span>analysis models or mart models: where you can analyze the data (calculate the average, etc.)</span></li></ul><p><span>These mart models often are seperated by stakeholder groups. So you have mart models for the marketing team, mart models for the sales team, etc. and they are organized in different folders and in different schemas within the data warehouse.</span></p><h2 id='dbt-repositories'><code>dbt</code><span> repositories</span></h2><p><span>One of the </span><code>dbt</code><span> aims is to create a flow where your work will be </span><strong><span>version controlled</span></strong><span>. That&#39;s why all the code that </span><code>dbt</code><span> will need to model the data has to be a part of a repository. You will need to create a new repository in your GitHub that will follow this structure:</span></p><ul><li><p><code>dbt_project.yml</code><span> - defines the project and global variables/paths</span></p></li><li><p><code>dbt_packages</code><span> - used if any external packages are used (same like pandas in python)</span></p></li><li><p><code>logs</code><span> - logs of all </span><code>dbt</code><span> runs</span></p></li><li><p><code>macros</code><span> - will store the code that might be repeated (like a function in python)</span></p></li><li><p><code>models</code><span>:</span></p><ul><li><code>staging</code><span> — creating our atoms, our initial modular building blocks, from source data</span></li><li><code>prep</code><span> (intermediate) — stacking layers of logic with clear and specific purposes to prepare our staging models to join into the entities we want </span></li><li><code>marts</code><span> — bringing together our modular pieces into a wide, rich vision of the entities our organization cares about - for the stakeholers</span></li></ul></li><li><p><code>seeds</code><span> — seeds are CSV files in your </span><code>dbt</code><span> project (typically in your seeds directory), that </span><code>dbt</code><span> can load into your data warehouse using the </span><code>dbt seed</code><span> command</span></p></li><li><p><code>snapshots</code><span> — analysts often need to &quot;look back in time&quot; at previous data states in their mutable tables. While some source data systems are built in a way that makes accessing historical data possible, this is not always the case. </span><code>dbt</code><span> provides a mechanism, snapshots, which records changes to a mutable table over time</span></p></li><li><p><code>target</code><span> — where the compiled SQL code is saved</span></p></li><li><p><code>tests</code><span> — tests are assertions you make about your models and other resources in your </span><code>dbt</code><span> project (e.g. sources, seeds and snapshots). When you run </span><code>dbt test</code><span>, </span><code>dbt</code><span> will tell you if each test in your project passes or fails.</span></p></li></ul><h2 id='dbt-core-and-dbt-cloud'><code>dbt core</code><span> and </span><code>dbt cloud</code></h2><p><span>There are two ways of using </span><code>dbt</code><span>. </span></p><ol start='' ><li><strong><span>dbt Core:</span></strong><span> An open-source project. It’s free to use, but it requires technical knowledge as you have to set it up locally on your computer.</span></li><li><strong><span>dbt Cloud:</span></strong><span> A commercial product. </span><code>dbt cloud</code><span> is basically </span><code>dbt</code><span> core with a lot of additional out-of-the-box features like job orchestration, which you would have to do on your own in the open-source version.  </span></li></ol><p><span>In our week we will use the beginner-friendly </span><code>dbt cloud</code><span>.</span></p><h2 id='1-create-a-git-repository'><span>1. Create a Git Repository</span></h2><p><span>We will need a repository with the codebase for data modeling / data pipeline:</span></p><table class="bdrless" style="border-width: 0px">
+   <tbody><tr>
+    <td><b>0.</b></td>
+    <td><b>Create a new Repository in your personal GitHub account.</b>
+    <ol>
+        <li>Click the link here on the right, or go to GitHub to your repositories and click the green button "New"</li>
+        <li>Choose your handle as "Owner"</li>
+        <li>Name the repo, for examlpe "dbt_meteostat".</li> 
+        <li>You can make it "Private" or "Public"</li> 
+        <li><b style="color:red">Please don't ADD anything else.</b>
+          <ul>
+            <li>no README</li>
+            <li>no <code>.gitignore</code></li>
+            <li>no License</li>
+           </ul>
+        </li>
+    </ol>
+    </td>
+    <td><a href="https://github.com/new" target="_blank">Create a new GitHub Repo</a>
+       <p>
+       <a href="./images/setup_1.png" target="_blank"><img src="./images/setup_1.png" style="zoom:7%;"></a>
+    </p></td>
+   </tr>
+</tbody></table><p>&nbsp;</p><h2 id='2-setup-dbt-cloud'><span>2. Setup dbt Cloud </span></h2><h3 id='dbt-cloud-account-with-initial-configuration'><span>dbt cloud account with initial configuration</span></h3>"
+    <table class="bdrless" style="border-width: 0px">
+   <tbody><tr>
+    <td><b>1.</b></td>
+    <td>Go to dbt cloud sign up page</td>
+    <td><a href="https://www.getdbt.com/signup/" target="_blank">dbt cloud sign up page</a></td>
+   </tr>
+   <tr>
+    <td><b>2.</b></td>
+    <td>Provide all the information needed to create an account and click on <b>Create my account</b></td>
+    <td><a href="./images/setup_2.png" target="_blank"><img src="./images/setup_2.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>3.</b></td>
+    <td>Make sure you click on the verification email</td>
+    <td><a href="./images/setup_3.png" target="_blank"><img src="./images/setup_3.png" style="zoom:20%;"></a></td>
+   </tr>  
+   <tr>
+    <td><b>4.</b></td>
+    <td>After that dbt will create a project and name it `Analytics` </td>
+    <td><a href="./images/setup_4.png" target="_blank"><img src="./images/setup_4.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>5.</b></td>
+    <td>Under the project setup we need to first to configure a <b>database connection</b> for our development environment</td>
+    <td><a href="./images/setup_5.png" target="_blank"><img src="./images/setup_5.png" style="zoom:20%;"></a></td>
+   </tr>    
+   <tr>
+    <td><b>6.</b></td>
+    <td>From the dropdown or from the panel please choose<b>PostgreSQL</b> and click on <b>Next</b></td>
+    <td><a href="./images/setup_6.png" target="_blank"><img src="./images/setup_6.png" style="zoom:20%;"></a></td>
+   </tr> 
+   <tr>
+    <td><b>7.</b></td>
+    <td>Provide the database credentials: 
+    <li>host</li>
+    <li>port </li>
+    <li>and database name (the database that we used during the sql module)</li></td>
+    <td><a href="./images/setup_7.png" target="_blank"><img src="./images/setup_7.png" style="zoom:20%;"></a></td>
+   </tr> 
+   <tr>
+    <td><b>8.</b></td><td>Please click on "Credentials", click the name of your project(in my case "Analytics") and then click "configure development environment" and "add connection".</td>
+    <td><a href="./images/setup_new1.png" target="_blank"><img src="./images/setup_new1.png" style="zoom:20%;"></a></td>
+   </tr>    
+   <tr>
+    <td><b>9.</b></td>
+    <td>Under <b>Development Credentials</b> provide your credentials including username (which is given to you during the sql module), password to the instance and the schema(your own schema) that should be set to <b>public</b></td>
+    <td><a href="./images/setup_8.png" target="_blank"><img src="./images/setup_8.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>10.</b></td>
+    <td>Test your database connection!</td>
+    <td><a href="./images/setup_9.png" target="_blank"><img src="./images/setup_9.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>11.</b></td>
+    <td><b>Setup a repository:</b> <br>
+    dbt can also get access to a github repo using ssh key
+    <li>choose "Git Clone" option. (<font style="color:red">not "GitHub"!</font>)</li>   
+    <li>follow the steps 11-15</li>
+    </td>
+    <td><a href="./images/setup_10.png" target="_blank"><img src="./images/setup_10.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>12.</b></td>
+    <td>Copy the ssh connection and the link taken from your repository (check it on github.com) under the <b>Code</b> button.</td>
+    <td><a href="./images/setup_11.png" target="_blank"><img src="./images/setup_11.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>13.</b></td>
+    <td>Paste the link to dbt setup. It will generate an ssh key. You need to add to the repo on github.com.<br>
+    <li>Copy the ssh-rsa key</li>
+    <li><a href="https://docs.getdbt.com/docs/cloud/git/import-a-project-by-git-url#github">tutorial</a></li></td>
+    <td><a href="./images/setup_12.png" target="_blank"><img src="./images/setup_12.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>14.</b></td>
+    <td>
+      <li>open your new empty repository, find <b>Settings</b> in the top nav bar</li>
+      <li>from the menu on the left select <b>Deploy keys</b></li>
+      <li>click the green button "Add deploy key"</li>
+   </td>
+    <td><a href="./images/setup_13.png" target="_blank"><img src="./images/setup_13.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>15.</b></td>
+    <td>In your GitHub:
+    <ul>
+      <li>give the key a name(e.g. 'dbt-weather')</li>
+      <li>paste the ssh key from dbt and save it</li>
+      <li>tick the checkbox "Allow write access"</li>
+      <li>click "Add key" button</li>
+   </ul>
+   </td>
+    <td><a href="./images/setup_14.png" target="_blank"><img src="./images/setup_14.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>16.</b></td>
+    <td>In your GitHub: you should now see the ssh key
+   </td>
+    <td><a href="./images/setup_15.png" target="_blank"><img src="./images/setup_15.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>17.</b></td>
+    <td>Back to dbt repository setup. Click the Button "Next". If everything worked you might see a similar message...</td>
+    <td><a href="./images/setup_16.png" target="_blank"><img src="./images/setup_16.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>18.</b></td>
+    <td>... and your dbt project is ready!</td>
+    <td><a href="./images/setup_17.png" target="_blank"><img src="./images/setup_17.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+    <td><b>19.</b></td>
+    <td>On initial setup you will get a 14 day trial of the "Team" plan. As long as you don't enter any payment information, you can let the trial ruan out without any consequences. Even with the Team Trial you only can have one active dbt project, so there is no real benefit for our needs. At the end of the trial you can switch to the "Developer" plan. <b> 
+    You can skip this step for now.</b>  <br><br>
+    Go to your <b>Account Settings</b> (using the icon in the top right corner) and go to the <b>Billing</b> section from the menu on the left side. Make sure you're using the developer plan which is free of charge and allows you to have one project at a time </td>
+    <td><a href="./images/setup_18.png" target="_blank"><img src="./images/setup_18.png" style="zoom:20%;"></a></td>
+   </tr>
+   <tr>
+       <td><b>19.</b></td>
+       <td>In the navigation bar go to "Studio"
+       </td><td><a href="./images/setup_19.png" target="_blank"><img src="./images/setup_19.png" style="zoom:20%;"></a></td>
+      </tr>   
+   <tr>
+    <td><b>20.</b></td>
+    <td>Secondary vertical nav bar is now showing "Version Control" and "File explorer" sections. 
+    <br><br>
+    Under "File Explorer" you should see an empty folder with the name of your empty repo.
+    <br><br>
+    Under "Version Control" click the button <b>Initialize dbt project</b>. It will create all the necessary folders. dbt will synchronise with GitHub and show the repo on the left under "File Explorer". Above that is the Version Control Section.<br><br><b>Note:</b><b style="color:red"> We <u>don't need</u> to create a branch.</b> (in case you see the option)</td>
+    <td><a href="./images/setup_20.png" target="_blank"><img src="./images/setup_20.png" style="zoom:20%;"></a></td>
+   </tr>
+      <tr>
+    <td><b>21.</b></td>
+    <td>If you forget to add SSH key it will give you the following error. <br>
+    When you return to the Dashboard, you'll see a button suggesting to "Create environment". <b style="color:red">Don't click it.</b> 
+    <br>
+    You need to add the ssh-rsa key generated by dbt to your GitHub repo (see Step 14). </td>
+    <td><a href="./images/setup_21.png" target="_blank"><img src="./images/setup_21.png" style="zoom:20%;"></a></td>
+   </tr>
+</tbody></table><p>&nbsp;</p><p>&nbsp;</p><h3 id='reading'><span>Reading</span></h3><ul><li><a href='https://docs.getdbt.com/guides/best-practices/how-we-structure/1-guide-overview'><span>How to strucure a dbt project</span></a></li><li><a href='https://www.getdbt.com/analytics-engineering/transformation/'><span>About data transformations</span></a></li></ul></div></div>
+</body>
+</html>
